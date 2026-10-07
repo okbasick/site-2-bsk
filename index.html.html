@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BSK — Resenha do Basick. Uma nova era, a mesma resenha.">
+<title>BSK — Resenha do Basick</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07060b;--card:#100d17;--purple:#8b3dff;--purple2:#c05cff;--text:#f7f3ff;--muted:#aaa2b7;--line:#261b35}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at 80% 10%,#32135d 0,transparent 28%),radial-gradient(circle at 10% 50%,#1c0c35 0,transparent 30%),var(--bg);color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}
+nav{position:fixed;top:0;left:0;width:100%;z-index:20;background:rgba(7,6,11,.72);backdrop-filter:blur(16px);border-bottom:1px solid rgba(192,92,255,.12)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900;letter-spacing:-1px;font-size:24px}.brand span{color:var(--purple2)}
+.links{display:flex;gap:28px;color:#c7bfd0;font-size:14px}.links a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:12px;font-weight:800;font-size:14px;background:linear-gradient(135deg,var(--purple),var(--purple2));box-shadow:0 10px 35px rgba(139,61,255,.25);transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 14px 45px rgba(139,61,255,.38)}
+.btn.secondary{background:transparent;border:1px solid #443052;box-shadow:none}
+.hero{min-height:760px;display:flex;align-items:center;padding-top:72px;position:relative}
+.hero:before{content:"BSK";position:absolute;right:-40px;top:120px;font-size:clamp(180px,30vw,390px);font-weight:900;color:rgba(255,255,255,.018);letter-spacing:-25px;pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.badge{display:inline-flex;padding:8px 12px;border:1px solid #4a2d65;border-radius:999px;color:#d8b8ff;background:#180e24;font-size:12px;font-weight:800;margin-bottom:22px}
+h1{font-size:clamp(50px,7vw,88px);line-height:.92;letter-spacing:-5px;max-width:700px}
+h1 span{color:var(--purple2)}.lead{color:var(--muted);font-size:17px;line-height:1.7;max-width:590px;margin:25px 0 30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}.visual{height:470px;border-radius:30px;border:1px solid #362345;background:linear-gradient(145deg,#170d24,#0b0910);position:relative;overflow:hidden;display:grid;place-items:center;box-shadow:0 30px 100px rgba(80,20,140,.25)}
+.visual:before,.visual:after{content:"";position:absolute;border-radius:50%;filter:blur(10px)}.visual:before{width:230px;height:230px;background:#7c25e8;opacity:.35;top:-50px;right:-40px}.visual:after{width:180px;height:180px;background:#bd45ff;opacity:.2;bottom:-50px;left:-30px}
+.logo{position:relative;z-index:2;width:230px;height:230px;border:2px solid #a951ff;border-radius:50%;display:grid;place-items:center;box-shadow:0 0 80px rgba(166,70,255,.35),inset 0 0 45px rgba(166,70,255,.12)}
+.logo strong{font-size:86px;letter-spacing:-8px}.logo small{position:absolute;bottom:38px;font-size:10px;letter-spacing:4px;color:#d8b8ff}
+section{padding:95px 0}.section-head{margin-bottom:38px}.eyebrow{color:var(--purple2);font-size:12px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.section-head h2{font-size:40px;letter-spacing:-2px;margin-top:8px}.section-head p{color:var(--muted);margin-top:10px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:rgba(16,13,23,.78);border:1px solid var(--line);border-radius:20px;padding:25px;transition:.2s}.card:hover{transform:translateY(-4px);border-color:#563473}.icon{width:45px;height:45px;border-radius:12px;background:#1d102a;display:grid;place-items:center;color:var(--purple2);font-size:21px;margin-bottom:18px}.card h3{margin-bottom:8px}.card p{color:var(--muted);line-height:1.6;font-size:14px}
+.members{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.member{padding:22px;border:1px solid var(--line);border-radius:18px;background:#0e0b14}.avatar{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,#30124d,#9a43e9);display:grid;place-items:center;font-weight:900;font-size:20px;margin-bottom:16px}.role{font-size:11px;color:var(--purple2);font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}.member p{color:var(--muted);font-size:13px}
+.cta{border:1px solid #4b2d63;background:linear-gradient(135deg,rgba(89,29,133,.35),rgba(20,12,28,.7));border-radius:28px;padding:55px;text-align:center}.cta h2{font-size:44px;letter-spacing:-2px}.cta p{color:var(--muted);margin:13px auto 25px;max-width:600px;line-height:1.6}
+footer{padding:30px 0;border-top:1px solid var(--line);color:#817888;font-size:12px;display:flex;justify-content:space-between}
+@media(max-width:800px){.links{display:none}.hero{min-height:auto;padding:130px 0 70px}.hero-grid{grid-template-columns:1fr;gap:35px}.visual{height:330px}.cards{grid-template-columns:1fr}.members{grid-template-columns:1fr 1fr}h1{letter-spacing:-3px}.cta{padding:35px 20px}.cta h2{font-size:34px}}
+@media(max-width:480px){.members{grid-template-columns:1fr}footer{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+<nav><div class="container nav">
+  <a class="brand" href="#">BS<span>K</span></a>
+  <div class="links"><a href="#sobre">Sobre</a><a href="#membros">Membros</a><a href="#comunidade">Comunidade</a></div>
+  <a class="btn" href="https://discord.gg/pM6qDwzzS3" target="_blank">Entrar no Discord</a>
+</div></nav>
+
+<main>
+<section class="hero"><div class="container hero-grid">
+  <div>
+    <div class="badge">🔥 RESENHA DO BASICK — NOVA ERA</div>
+    <h1>A resenha que<br><span>nunca para.</span></h1>
+    <p class="lead">Bem-vindo à BSK. Resenha, amizade, caos e aquela energia que só quem é da caminhada conhece. Chega junto e faça parte da nova era.</p>
+    <div class="actions"><a class="btn" href="https://discord.gg/pM6qDwzzS3" target="_blank">⚡ Entrar na Resenha</a><a class="btn secondary" href="#sobre">Conhecer a BSK</a></div>
+  </div>
+  <div class="visual"><div class="logo"><strong>BSK</strong><small>RESENHA DO BASICK</small></div></div>
+</div></section>
+
+<section id="sobre"><div class="container">
+  <div class="section-head"><div class="eyebrow">Quem somos</div><h2>Mais que uma resenha.</h2><p>Uma comunidade criada para quem gosta de estar junto, trocar ideia e viver bons momentos.</p></div>
+  <div class="cards">
+    <div class="card"><div class="icon">🔥</div><h3>Nova Era</h3><p>A BSK segue em frente com uma nova fase, mantendo a essência e abrindo espaço para novas histórias.</p></div>
+    <div class="card"><div class="icon">🥃</div><h3>Do nosso jeito</h3><p>Resenha sem filtro, personalidade forte e aquela vibe que transforma conhecidos em chegados.</p></div>
+    <div class="card"><div class="icon">⚡</div><h3>Comunidade</h3><p>Entre, conheça a galera, participe das conversas e faça parte da caminhada da BSK.</p></div>
+  </div>
+</div></section>
+
+<section id="membros"><div class="container">
+  <div class="section-head"><div class="eyebrow">A banca</div><h2>Quem movimenta a BSK.</h2><p>Alguns dos nomes que fazem parte da história e da nova fase da Resenha.</p></div>
+  <div class="members">
+    <div class="member"><div class="avatar">B</div><div class="role">Chefe</div><h3>Basick_iHarDz</h3><p>O nome por trás da resenha.</p></div>
+    <div class="member"><div class="avatar">L</div><div class="role">Fundadora</div><h3>Leeh_4i20</h3><p>Nova liderança da Resenha do Basick.</p></div>
+    <div class="member"><div class="avatar">C</div><div class="role">BSK</div><h3>Cris</h3><p>Parte da caminhada da resenha.</p></div>
+  </div>
+</div></section>
+
+<section id="comunidade"><div class="container"><div class="cta">
+  <div class="eyebrow">Chega junto</div><h2>Tá esperando o quê?</h2>
+  <p>A nova era da Resenha do Basick já começou. Chama os chegados, entra no Discord e vem fazer parte da BSK.</p>
+  <a class="btn" href="https://discord.gg/pM6qDwzzS3" target="_blank">🔥 ENTRAR AGORA</a>
+</div></div></section>
+</main>
+
+<footer><div class="container" style="width:min(1120px,92%);display:flex;justify-content:space-between;gap:10px"><span>© 2026 BSK — Resenha do Basick.</span><span>Uma nova era. A mesma resenha.</span></div></footer>
+</body>
+</html>
